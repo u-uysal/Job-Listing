@@ -4,10 +4,10 @@ export default function JobPresent({ job }) {
   const arrRoleandLevel = [job.role, job.level];
   const arraLangandTool = [...job.languages, ...job.tools];
   return (
-    <div className="flex flex-col bg-white shadow-lg my-16 mx-10 p-6 rounded">
+    <div className="flex flex-col bg-white shadow-lg my-16 mx-10 p-6 rounded sm:flex-row">
       <div>
         <img
-          className="-mt-16 mb-4 w-20 h-20"
+          className="-mt-16 mb-4 w-20 h-20 sm:my-0 sm:h-24 sm:w-24"
           src={job.logo}
           alt={job.company}
         />
@@ -31,17 +31,17 @@ export default function JobPresent({ job }) {
           {job.postedAt} - {job.contract} - {job.location}
         </p>
       </div>
-      <div className="flex flex-wrap items-center mt-4 mx-4 pt-4 border-t-2 border-gray-500 border-solid">
+      <div className="flex flex-wrap items-center mt-4 mx-4 pt-4 border-t-2 border-gray-500 border-solid sm:ml-auto sm:border-0 sm:pt-0 sm:mt-0">
         {arrRoleandLevel
           ? arrRoleandLevel.map((ral, i) => (
-              <span className="text-teal-500 bg-teal-100 font-bold mr-4 mb-4 p-2 rounded">
+              <span className="text-teal-500 bg-teal-100 font-bold mr-4 mb-4 p-2 rounded sm:mb-0">
                 {ral}
               </span>
             ))
           : ""}
         {arraLangandTool
           ? arraLangandTool.map((lat, i) => (
-              <span className="text-teal-500 bg-teal-100 font-bold mr-4 mb-4 p-2 rounded">
+              <span className="text-teal-500 bg-teal-100 font-bold mr-4 mb-4 p-2 rounded sm:mb-0">
                 {lat}
               </span>
             ))
