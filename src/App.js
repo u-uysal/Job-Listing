@@ -21,7 +21,7 @@ function App() {
       tags.push(...languages);
     }
 
-    return tags.some((tag) => filters.includes(tag));
+    return filters.every((filter) => tags.includes(filter));
   };
   const handleClick = (tag) => {
     // avoid double clicking
@@ -47,7 +47,7 @@ function App() {
           {filters.map((filter) => (
             <span
               onClick={() => handleClickFilter(filter)}
-              className="text-teal-500 cursor-pointer bg-teal-100 font-bold mr-4 mb-4 p-2 rounded sm:mb-0"
+              className="text-teal-500 cursor-pointer bg-teal-100 font-bold mr-4 mb-4 p-2 rounded lg:mb-0"
             >
               <span>&times;</span> {filter}{" "}
             </span>
