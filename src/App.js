@@ -10,7 +10,9 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <h1 className="text-4xl">hey</h1>
+      <header className="mb-12">
+        <img src="/images/bg-header-desktop.svg" alt="background-image" />
+      </header>
       {jobs.length === 0 ? (
         <p>Jobs are fetching...</p>
       ) : (
