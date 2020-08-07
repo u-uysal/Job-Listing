@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function JobPresent({ job }) {
+export default function JobPresent({ job, handleClick }) {
   const arrRoleandLevel = [job.role, job.level];
   const arraLangandTool = [...job.languages, ...job.tools];
   return (
@@ -34,14 +34,20 @@ export default function JobPresent({ job }) {
       <div className="flex flex-wrap items-center mt-4 mx-4 pt-4 border-t-2 border-gray-500 border-solid sm:ml-auto sm:border-0 sm:pt-0 sm:mt-0">
         {arrRoleandLevel
           ? arrRoleandLevel.map((ral, i) => (
-              <span className="text-teal-500 bg-teal-100 font-bold mr-4 mb-4 p-2 rounded sm:mb-0">
+              <span
+                onClick={() => handleClick(ral)}
+                className=" cursor-pointer text-teal-500 bg-teal-100 font-bold mr-4 mb-4 p-2 rounded sm:mb-0"
+              >
                 {ral}
               </span>
             ))
           : ""}
         {arraLangandTool
           ? arraLangandTool.map((lat, i) => (
-              <span className="text-teal-500 bg-teal-100 font-bold mr-4 mb-4 p-2 rounded sm:mb-0">
+              <span
+                onClick={() => handleClick(lat)}
+                className=" cursor-pointer text-teal-500 bg-teal-100 font-bold mr-4 mb-4 p-2 rounded sm:mb-0"
+              >
                 {lat}
               </span>
             ))
