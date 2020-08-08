@@ -4,13 +4,14 @@ export default function JobPresent({ job, handleClick }) {
   const arrRoleandLevel = [job.role, job.level];
   const arraLangandTool = [...job.languages, ...job.tools];
 
-  console.log(job.logo);
+  const { logo } = job;
+
   return (
     <div className="flex flex-col bg-white shadow-lg my-16 mx-10 p-6 rounded lg:flex-row">
       <div>
         <img
           className="-mt-16 mb-4 w-20 h-20 lg:my-0 lg:h-24 lg:w-24"
-          src={job.logo}
+          src={logo}
           alt={job.company}
         />
       </div>
@@ -37,6 +38,7 @@ export default function JobPresent({ job, handleClick }) {
         {arrRoleandLevel
           ? arrRoleandLevel.map((ral, i) => (
               <span
+                key={i}
                 onClick={() => handleClick(ral)}
                 className=" cursor-pointer text-teal-500 bg-teal-100 font-bold mr-4 mb-4 p-2 rounded lg:mb-0"
               >
@@ -47,6 +49,7 @@ export default function JobPresent({ job, handleClick }) {
         {arraLangandTool
           ? arraLangandTool.map((lat, i) => (
               <span
+                key={i}
                 onClick={() => handleClick(lat)}
                 className=" cursor-pointer text-teal-500 bg-teal-100 font-bold mr-4 mb-4 p-2 rounded lg:mb-0"
               >

@@ -44,8 +44,9 @@ function App() {
       {filters.length > 0 && (
         <div className="flex bg-white shadow-md my-16 mx-10 p-6 rounded">
           {" "}
-          {filters.map((filter) => (
+          {filters.map((filter, i) => (
             <span
+              key={i}
               onClick={() => handleClickFilter(filter)}
               className="text-teal-500 cursor-pointer bg-teal-100 font-bold mr-4 mb-4 p-2 rounded lg:mb-0"
             >
