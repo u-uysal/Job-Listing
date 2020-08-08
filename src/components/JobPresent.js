@@ -3,6 +3,8 @@ import React from "react";
 export default function JobPresent({ job, handleClick }) {
   const arrRoleandLevel = [job.role, job.level];
   const arraLangandTool = [...job.languages, ...job.tools];
+
+  console.log(job.logo);
   return (
     <div className="flex flex-col bg-white shadow-lg my-16 mx-10 p-6 rounded lg:flex-row">
       <div>
